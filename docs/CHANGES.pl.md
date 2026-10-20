@@ -131,16 +131,14 @@ Zrzuty pochodzą z kompilacji debug zainstalowanej na telefonie. Poprawka okna z
 
 ## Stan wydania i pozostałe kroki
 
-- Cztery repozytoria komponentów zawierają zmiany na lokalnej gałęzi `release/localization`, przebazowanej na bieżący `origin/main`.
-- Wskaźniki podmodułów w tym commicie wskazują na commity tych komponentów.
+- Cztery gałęzie `release/localization` są wypchnięte do forków `AndrewSpec` i są originami podmodułów.
+- `.gitmodules` wskazuje na te forki, więc klonowanie forka zestawu z podmodułami odnajduje nowe commity.
+- `april-jk` pozostaje upstreamem i to konto ma do niego tylko odczyt; publikacja tam wymaga prawa zapisu lub scalonych PR-ów.
 - Nie można jeszcze utworzyć wspólnego tagu wydania: Mobile ma `0.1.5`, a Plugin i Relay `0.1.9`. Workflow wydania odrzuci tag, dopóki wszystkie trzy wersje nie będą zgodne. Przed tagowaniem wyrównaj wersje (na przykład `0.1.10`).
-- Z tego workspace nie wykonano pushu komponentów, strony ani zestawu. Najpierw wypchnij gałęzie komponentów, potem gałąź zestawu; inaczej CI nie odnajdzie commitów podmodułów.
+- Gałąź zestawu nie jest jeszcze wypchnięta.
 - Wdrożenie strony i podpisanie wydania Androida pozostają krokami wydaniowymi.
 
 ```bash
-git -C dsh-mobile push origin release/localization
-git -C dsh-plugin push origin release/localization
-git -C dsh-relay push origin release/localization
-git -C dsh-website push origin release/localization
+# Gałęzie komponentów są już wypchnięte do forków AndrewSpec.
 git push origin main
 ```

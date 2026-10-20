@@ -131,16 +131,14 @@ The screenshots come from a debug build installed on the phone. The rename-dialo
 
 ## Release status and remaining steps
 
-- The four component repositories contain the changes on a local `release/localization` branch, rebased onto their current `origin/main`.
-- The suite submodule pointers in this commit reference those component commits.
+- The four `release/localization` branches are pushed to the `AndrewSpec` forks and are the submodule origins.
+- `.gitmodules` points at those forks, so cloning the suite fork with submodules resolves the new commits.
+- `april-jk` remains the upstream and is read-only for this account; publishing there would require write access or merged PRs.
 - The unified release tag cannot be created yet: Mobile is `0.1.5`, while Plugin and Relay are `0.1.9`. The release workflow rejects a tag unless all three match. Align the versions (for example `0.1.10`) before tagging.
-- No component, website, or suite push was performed from this workspace. Push the component branches first, then the suite branch; otherwise CI cannot resolve the submodule commits.
+- The suite branch is not pushed yet.
 - Website deployment and Android release signing remain release-time steps.
 
 ```bash
-git -C dsh-mobile push origin release/localization
-git -C dsh-plugin push origin release/localization
-git -C dsh-relay push origin release/localization
-git -C dsh-website push origin release/localization
+# Component branches are already pushed to the AndrewSpec forks.
 git push origin main
 ```
