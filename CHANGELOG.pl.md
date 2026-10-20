@@ -16,6 +16,7 @@
 - Mobile: adres e-mail zalogowanego konta w Ustawieniach jest domyślnie ukryty (`Ukryty`) i pokazuje się tylko na żądanie, więc nie jest widoczny na ekranie ani na zrzutach.
 - Mobile: okno zmiany nazwy komputera nie zwalnia już kontrolera tekstu, gdy trasa nadal się animuje. Znika błąd `TextEditingController was used after being disposed` i następująca po nim awaria `_dependents.isEmpty`.
 - Mobile: usunięto prawdziwy adres LAN z fixture'a testu parsera parowania.
+- Mobile: widok sesji DSH kończy się nad systemowym paskiem nawigacji Androida, więc stopka panelu bocznego DSH, pole zadania i pasek stanu pozostają widoczne i klikalne zamiast być rysowane pod paskiem systemowym. Weryfikacja na SM-S928B z Androidem 17 i trójprzyciskową nawigacją potwierdziła poprawkę.
 
 ### Dokumentacja
 

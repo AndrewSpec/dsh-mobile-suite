@@ -16,6 +16,7 @@
 - Mobile: the signed-in e-mail in Settings is hidden by default (`Ukryty`) and revealed only on request, so the address is not exposed on screen or in screenshots.
 - Mobile: the rename-computer dialog no longer disposes its text controller while the route is still animating. This removes the `TextEditingController was used after being disposed` error and the follow-up `_dependents.isEmpty` failure.
 - Mobile: removed a real LAN address from a pairing-parser test fixture.
+- Mobile: the DSH session view now ends above the Android system navigation bar, so the DSH sidebar footer, task composer, and status strip stay visible and tappable instead of being drawn under the system bar. An Android/SM-S928B check on Android 17 with 3-button navigation confirmed the change.
 
 ### Documentation
 
