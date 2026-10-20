@@ -17,7 +17,7 @@ DeepSeek Harness community post: [Show Your Plugins! #2520](https://github.com/d
 
 ## Interface languages
 
-The mobile app, Companion settings and remote file browser, Relay web pages, and public website support English, Polish, and Simplified Chinese. Each surface follows the phone or browser language by default, falls back to English, and exposes a visible language selector. Device names, file paths, URLs, protocol identifiers, and error codes are never translated.
+The mobile app, Companion settings and remote file browser, Relay web pages, and public website support English, Polish, and Simplified Chinese. Each surface follows the phone or browser language by default, falls back to English, and exposes a visible language selector. The account e-mail in Settings is hidden by default and is revealed only on request. Device names, file paths, URLs, protocol identifiers, and error codes are never translated.
 
 See the [module-by-module change summary](docs/CHANGES.md) for the localization work, the rename-dialog fix, device screenshots, and the privacy review.
 

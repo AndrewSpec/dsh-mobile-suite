@@ -16,6 +16,8 @@ Captured on the connected Android phone (Samsung Galaxy S24 Ultra) from the loca
 | --- | --- |
 | ![Polish computer actions](images/mobile-device-actions-pl.png) | ![Polish language selector](images/mobile-language-pl.png) |
 
+![Polish settings with the account e-mail hidden](images/mobile-settings-email-hidden-pl.png)
+
 The computer actions menu shows the browser-access entry added in 0.1.5 alongside rename and unpair. The language selector is the new session-level control that switches English, Polish, and Simplified Chinese without restarting the app.
 
 ## dsh-mobile (Flutter client)
@@ -23,8 +25,9 @@ The computer actions menu shows the browser-access entry added in 0.1.5 alongsid
 ### Added
 
 - Localization catalogs in `lib/l10n/en.json`, `lib/l10n/pl.json`, and `lib/l10n/zh.json`, loaded before the first frame through `AppLocalizations`.
-- System-language selection with a deterministic English fallback for unsupported locales. The explicit language choice is session-only and never migrates or rewrites credentials.
-- Language and theme selectors in Settings. Both controls re-render the app without restarting it.
+- System-language selection with a deterministic English fallback for unsupported locales. Explicit language and theme choices are persisted locally in secure storage and never migrate accounts or rewrite credentials.
+- Language and theme selectors in Settings. Both controls re-render the app without restarting it, and the stored choice is applied before the first frame on the next launch.
+- The signed-in e-mail in Settings is hidden by default (`Ukryty`) and revealed only for the current visit with the eye button.
 - Locale-aware relative timestamps and plural forms (`minutę/minuty/minut`, `godzinę/godziny/godzin`) instead of a single hardcoded pattern.
 - Localized API error mapping. Backend prose is never rendered; reason codes map to catalog keys.
 - Preserved language, theme, and requested path when the app hands a device to the browser or remote-files page (`session_target.dart`, `remote_files_path.dart`).
@@ -106,9 +109,10 @@ The computer actions menu shows the browser-access entry added in 0.1.5 alongsid
 
 ### Privacy
 
-- Screenshots were cropped to remove the status bar (time, notifications, carrier) and the navigation bar. The account e-mail, Relay address, access tickets, and device identifiers are not present.
+- Screenshots were cropped to remove the status bar (time, notifications, carrier) and the navigation bar. The account e-mail, Relay address, access tickets, and device identifiers are not present. The Settings capture shows the default `Ukryty` state; the address is rendered only after tapping the eye button.
 - The visible computer name in the captures is the neutral `Domowy komputer`; no account holder name is shown.
 - PNG metadata was stripped before commit.
+- Language and theme preferences are stored as two local values in the app's secure storage; they never contain account, pairing, or Relay credentials.
 - The real LAN address in `dsh-mobile/test/pair_payload_parser_test.dart` was replaced with the documentation range `192.0.2.10`.
 - Aegis working records under `docs/aegis/` contain local paths, LAN addresses, and device details. They are now ignored by git and are not part of the publication.
 - No credentials, tokens, JWTs, or private keys were found in the tracked working tree.
@@ -117,7 +121,7 @@ The computer actions menu shows the browser-access entry added in 0.1.5 alongsid
 
 | Component | Command | Result |
 | --- | --- | --- |
-| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | format and analyze clean; 57 tests passed |
+| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | format and analyze clean; 63 tests passed |
 | dsh-plugin | `npm run build` + `npm test` | build OK, 38 tests passed |
 | dsh-relay | `npm run build` + `npm test` | build OK, 31 tests passed |
 | dsh-website | `npm run check` | Astro, ESLint, and Prettier pass |

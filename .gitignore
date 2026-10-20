@@ -1,4 +1,5 @@
 .DS_Store
+.vscode/
 .omx/state/*.local.json
 *.log
 release-dist/

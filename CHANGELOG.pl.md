@@ -6,12 +6,14 @@
 
 ### Tłumaczenia
 
+- Wybór języka i motywu w aplikacji mobilnej jest zapamiętywany między uruchomieniami w bezpiecznym magazynie i stosowany przed pierwszą klatką.
 - Aplikacja mobilna, ustawienia Companion i pliki zdalne, strony Relay oraz publiczna strona obsługują angielski, polski i chiński uproszczony.
 - Każda powierzchnia podąża za językiem telefonu lub przeglądarki, wraca do angielskiego i udostępnia widoczny wybór języka.
 - Dodano polską dokumentację komponentów i zestawu.
 
 ### Naprawiono
 
+- Mobile: adres e-mail zalogowanego konta w Ustawieniach jest domyślnie ukryty (`Ukryty`) i pokazuje się tylko na żądanie, więc nie jest widoczny na ekranie ani na zrzutach.
 - Mobile: okno zmiany nazwy komputera nie zwalnia już kontrolera tekstu, gdy trasa nadal się animuje. Znika błąd `TextEditingController was used after being disposed` i następująca po nim awaria `_dependents.isEmpty`.
 - Mobile: usunięto prawdziwy adres LAN z fixture'a testu parsera parowania.
 

@@ -16,6 +16,8 @@ Zrzuty wykonano na podłączonym telefonie z Androidem (Samsung Galaxy S24 Ultra
 | --- | --- |
 | ![Polskie działania na komputerze](images/mobile-device-actions-pl.png) | ![Polski wybór języka](images/mobile-language-pl.png) |
 
+![Polskie ustawienia z ukrytym adresem e-mail konta](images/mobile-settings-email-hidden-pl.png)
+
 Menu działań pokazuje dodane w wersji 0.1.5 wejście do dostępu przez przeglądarkę obok zmiany nazwy i usunięcia parowania. Wybór języka to nowa kontrola na poziomie sesji, która przełącza angielski, polski i chiński uproszczony bez restartu aplikacji.
 
 ## dsh-mobile (klient Flutter)
@@ -23,8 +25,9 @@ Menu działań pokazuje dodane w wersji 0.1.5 wejście do dostępu przez przegl�
 ### Dodano
 
 - Katalogi tłumaczeń `lib/l10n/en.json`, `lib/l10n/pl.json` i `lib/l10n/zh.json`, wczytywane przed pierwszą klatką przez `AppLocalizations`.
-- Wybór języka systemowego z deterministycznym powrotem do angielskiego dla nieobsługiwanych języków. Jawny wybór języka działa tylko w sesji i nie migruje ani nie nadpisuje danych logowania.
-- Selektory języka i motywu w Ustawieniach. Oba przełączają aplikację bez restartu.
+- Wybór języka systemowego z deterministycznym powrotem do angielskiego dla nieobsługiwanych języków. Jawny wybór języka i motywu jest zapisywany lokalnie w bezpiecznym magazynie i nie migruje konta ani nie nadpisuje danych logowania.
+- Selektory języka i motywu w Ustawieniach. Oba przełączają aplikację bez restartu, a zapisany wybór jest stosowany przed pierwszą klatką przy następnym uruchomieniu.
+- Adres e-mail zalogowanego konta w Ustawieniach jest domyślnie ukryty (`Ukryty`) i pokazuje się tylko na czas bieżącej wizyty po naciśnięciu przycisku oka.
 - Tłumaczone znaczniki czasu i formy mnogie (`minutę/minuty/minut`, `godzinę/godziny/godzin`) zamiast jednego sztywnego wzorca.
 - Mapowanie błędów API na katalog. Proza z backendu nigdy nie trafia do użytkownika; kody przyczyn mapują się na klucze katalogu.
 - Zachowanie języka, motywu i żądanej ścieżki przy przekazaniu komputera do przeglądarki lub widoku plików zdalnych (`session_target.dart`, `remote_files_path.dart`).
@@ -106,9 +109,10 @@ Menu działań pokazuje dodane w wersji 0.1.5 wejście do dostępu przez przegl�
 
 ### Prywatność
 
-- Zrzuty przycięto, usuwając pasek stanu (godzina, powiadomienia, operator) i pasek nawigacji. E-mail konta, adres Relay, bilety dostępu i identyfikatory urządzenia nie występują na zrzutach.
+- Zrzuty przycięto, usuwając pasek stanu (godzina, powiadomienia, operator) i pasek nawigacji. E-mail konta, adres Relay, bilety dostępu i identyfikatory urządzenia nie występują na zrzutach. Zrzut Ustawień pokazuje domyślny stan `Ukryty`; adres pojawia się dopiero po naciśnięciu przycisku oka.
 - Widoczna nazwa komputera to neutralny `Domowy komputer`; nie pokazano danych właściciela konta.
 - Metadane PNG zostały usunięte przed commitem.
+- Preferencje języka i motywu są zapisywane jako dwie lokalne wartości w bezpiecznym magazynie aplikacji; nie zawierają danych konta, parowania ani Relay.
 - Prawdziwy adres LAN w `dsh-mobile/test/pair_payload_parser_test.dart` zastąpiono zakresem dokumentacyjnym `192.0.2.10`.
 - Robocze rekordy Aegis w `docs/aegis/` zawierają lokalne ścieżki, adresy LAN i szczegóły urządzenia. Są teraz ignorowane przez git i nie wchodzą do publikacji.
 - W śledzonym drzewie roboczym nie znaleziono danych logowania, tokenów, JWT ani kluczy prywatnych.
@@ -117,7 +121,7 @@ Menu działań pokazuje dodane w wersji 0.1.5 wejście do dostępu przez przegl�
 
 | Komponent | Polecenie | Wynik |
 | --- | --- | --- |
-| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | formatowanie i analiza bez błędów; 57 testów zaliczonych |
+| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | formatowanie i analiza bez błędów; 63 testów zaliczonych |
 | dsh-plugin | `npm run build` + `npm test` | build OK, 38 testów zaliczonych |
 | dsh-relay | `npm run build` + `npm test` | build OK, 31 testów zaliczonych |
 | dsh-website | `npm run check` | Astro, ESLint i Prettier bez błędów |

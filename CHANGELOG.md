@@ -6,12 +6,14 @@
 
 ### Localization
 
+- Mobile language and theme choices persist across launches in secure storage and are applied before the first frame.
 - Mobile, Companion settings and remote files, Relay web pages, and the public website now support English, Polish, and Simplified Chinese.
 - Every surface follows the phone or browser language, falls back to English, and exposes a visible language selector.
 - Added Polish component and suite documentation.
 
 ### Fixed
 
+- Mobile: the signed-in e-mail in Settings is hidden by default (`Ukryty`) and revealed only on request, so the address is not exposed on screen or in screenshots.
 - Mobile: the rename-computer dialog no longer disposes its text controller while the route is still animating. This removes the `TextEditingController was used after being disposed` error and the follow-up `_dependents.isEmpty` failure.
 - Mobile: removed a real LAN address from a pairing-parser test fixture.
 

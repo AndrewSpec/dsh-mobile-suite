@@ -17,7 +17,7 @@ Wątek społeczności DeepSeek Harness: [Show Your Plugins! #2520](https://githu
 
 ## Języki interfejsu
 
-Aplikacja mobilna, ustawienia Companion i zdalny menedżer plików, strony Relay oraz publiczna strona internetowa obsługują angielski, polski i chiński uproszczony. Każda powierzchnia domyślnie podąża za językiem telefonu lub przeglądarki, wraca do angielskiego i udostępnia widoczny wybór języka. Nazwy komputerów, ścieżki plików, adresy URL, identyfikatory protokołu i kody błędów nie są tłumaczone.
+Aplikacja mobilna, ustawienia Companion i zdalny menedżer plików, strony Relay oraz publiczna strona internetowa obsługują angielski, polski i chiński uproszczony. Każda powierzchnia domyślnie podąża za językiem telefonu lub przeglądarki, wraca do angielskiego i udostępnia widoczny wybór języka. Adres e-mail konta w Ustawieniach jest domyślnie ukryty i pokazuje się tylko na żądanie. Nazwy komputerów, ścieżki plików, adresy URL, identyfikatory protokołu i kody błędów nie są tłumaczone.
 
 Zobacz [opis zmian według modułów](docs/CHANGES.pl.md): tłumaczenia, poprawkę okna zmiany nazwy, zrzuty z telefonu i przegląd prywatności.
 
