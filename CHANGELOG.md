@@ -1,5 +1,24 @@
 # Changelog
 
+[English](CHANGELOG.md) | [Polski](CHANGELOG.pl.md)
+
+## Unreleased - 2026-10-20
+
+### Localization
+
+- Mobile, Companion settings and remote files, Relay web pages, and the public website now support English, Polish, and Simplified Chinese.
+- Every surface follows the phone or browser language, falls back to English, and exposes a visible language selector.
+- Added Polish component and suite documentation.
+
+### Fixed
+
+- Mobile: the rename-computer dialog no longer disposes its text controller while the route is still animating. This removes the `TextEditingController was used after being disposed` error and the follow-up `_dependents.isEmpty` failure.
+- Mobile: removed a real LAN address from a pairing-parser test fixture.
+
+### Documentation
+
+- Added the per-module [change summary](docs/CHANGES.md) / [opis zmian](docs/CHANGES.pl.md) with device screenshots, privacy review, and verification evidence.
+
 ## 0.1.7 - 2026-08-19
 
 ### Browser and Companion access

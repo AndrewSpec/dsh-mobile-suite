@@ -1,6 +1,6 @@
 # DSH Mobile Suite
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](README.md) | [Polski](README.pl.md) | [简体中文](README.zh-CN.md)
 
 用 Android 手机远程打开电脑上的 DeepSeek Harness Web UI，并通过原有界面创建和下达新任务。
 
@@ -14,6 +14,12 @@ DeepSeek Harness 社区展示帖：[Show Your Plugins! #2520](https://github.com
     <td><img src="docs/images/mobile-devices.png" alt="DSH Mobile 电脑列表" width="320"></td>
   </tr>
 </table>
+
+## 界面语言
+
+手机应用、Companion 设置与远程文件浏览器、Relay 网页以及公开网站支持英语、波兰语和简体中文。各界面默认跟随手机或浏览器语言，无法匹配时回退到英语，并提供可见的语言选择器。设备名称、文件路径、URL、协议标识和错误码不会翻译。
+
+逐模块的变更说明、重命名对话框修复、设备截图和隐私检查见 [变更说明](docs/CHANGES.md)（英文）与 [波兰语版本](docs/CHANGES.pl.md)。
 
 ## 组成
 

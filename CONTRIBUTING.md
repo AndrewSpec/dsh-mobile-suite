@@ -1,5 +1,7 @@
 # Contributing
 
+[English](CONTRIBUTING.md) | [Polski](CONTRIBUTING.pl.md)
+
 DSH Mobile Suite is split into independently versioned repositories. Open code changes in the repository that owns the affected component:
 
 - Mobile app: <https://github.com/april-jk/dsh-mobile>

@@ -1,5 +1,7 @@
 # Security Policy
 
+[English](SECURITY.md) | [Polski](SECURITY.pl.md)
+
 ## Supported versions
 
 Only the latest GitHub Release receives security fixes during the MVP phase.
