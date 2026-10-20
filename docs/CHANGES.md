@@ -40,6 +40,7 @@ The computer actions menu shows the browser-access entry added in 0.1.5 alongsid
 ### Fixed
 
 - The rename dialog disposed its `TextEditingController` immediately after `showDialog` returned, while the dialog route was still animating. That produced a `TextEditingController was used after being disposed` error followed by the framework assertion `_dependents.isEmpty`. The controller is now owned by a stateful dialog and disposed with its route.
+- The DSH session WebView now ends above the Android system navigation bar, so the sidebar footer, task composer, and status strip stay visible and tappable. Regression test: `test/session_webview_insets_test.dart`.
 - Regression test: `test/rename_dialog_test.dart`.
 
 ### Documentation
@@ -121,7 +122,7 @@ The computer actions menu shows the browser-access entry added in 0.1.5 alongsid
 
 | Component | Command | Result |
 | --- | --- | --- |
-| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | format and analyze clean; 63 tests passed |
+| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | format and analyze clean; 64 tests passed |
 | dsh-plugin | `npm run build` + `npm test` | build OK, 38 tests passed |
 | dsh-relay | `npm run build` + `npm test` | build OK, 31 tests passed |
 | dsh-website | `npm run check` | Astro, ESLint, and Prettier pass |

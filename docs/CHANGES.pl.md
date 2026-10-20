@@ -40,6 +40,7 @@ Menu działań pokazuje dodane w wersji 0.1.5 wejście do dostępu przez przegl�
 ### Naprawiono
 
 - Okno zmiany nazwy zwalniało `TextEditingController` zaraz po powrocie z `showDialog`, gdy trasa okna nadal się animowała. Powstawał błąd `TextEditingController was used after being disposed`, a następnie asercja frameworka `_dependents.isEmpty`. Kontroler jest teraz własnością stanowego okna i jest zwalniany razem z jego trasą.
+- Widok sesji DSH kończy się nad systemowym paskiem nawigacji Androida, więc stopka panelu bocznego, pole zadania i pasek stanu pozostają widoczne i klikalne. Test regresyjny: `test/session_webview_insets_test.dart`.
 - Test regresyjny: `test/rename_dialog_test.dart`.
 
 ### Dokumentacja
@@ -121,7 +122,7 @@ Menu działań pokazuje dodane w wersji 0.1.5 wejście do dostępu przez przegl�
 
 | Komponent | Polecenie | Wynik |
 | --- | --- | --- |
-| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | formatowanie i analiza bez błędów; 63 testów zaliczonych |
+| dsh-mobile | `dart format --set-exit-if-changed`, `flutter analyze`, `flutter test` | formatowanie i analiza bez błędów; 64 testów zaliczonych |
 | dsh-plugin | `npm run build` + `npm test` | build OK, 38 testów zaliczonych |
 | dsh-relay | `npm run build` + `npm test` | build OK, 31 testów zaliczonych |
 | dsh-website | `npm run check` | Astro, ESLint i Prettier bez błędów |
